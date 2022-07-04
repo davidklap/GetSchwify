@@ -1,5 +1,5 @@
 class BaseBordFactory {
-    constructor() {}
+    constructor() { }
 
-    genrateBord(size) {}
+    genrateBord(size) { }
 }

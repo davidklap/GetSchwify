@@ -9,6 +9,10 @@ export class View {
         document.getElementById("start-game-button").addEventListener("click", event)
     }
 
+    registerShiftButtonEvent(event) {
+        document.getElementById("shift-button").addEventListener("click",event);
+    }
+
     getUserNumberInput(msg) {
         let input = 0;
         do {

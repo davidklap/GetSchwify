@@ -7,6 +7,11 @@ export class GameManager extends BaseGameManager {
     }
 
     shift(source, distantion) { 
+        [this.borad.pazzlePieces[source.x][source.y],this.borad.pazzlePieces[distantion.x][distantion.y]] =
+         [this.borad.pazzlePieces[distantion.x][distantion.y],this.borad.pazzlePieces[source.x][source.y]];
+        
+        
+
         
     }
 

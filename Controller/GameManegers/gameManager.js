@@ -12,11 +12,24 @@ export class GameManager extends BaseGameManager {
             [this.borad.pazzlePieces[source.x][source.y], this.borad.pazzlePieces[distantion.x][distantion.y]] =
                 [this.borad.pazzlePieces[distantion.x][distantion.y], this.borad.pazzlePieces[source.x][source.y]];
 
-            this.gameStatus.score +=1;
+            this.gameStatus.status = this.checkIfWin() ? "win" : "keep-play";
+            this.gameStatus.score += 1;
         }
     }
 
-    checkIfWin() { }
+    checkIfWin() {
+        let corectBordPiceValue = 1;
+        for (let row = 0; row < this.boradDaimntaionSize; row++) {
+            for (let col = 0; col < this.boradDaimntaionSize; col++) {
+                let pieceVal = this.borad.pazzlePieces[row][col].val;
+                console.log(`${corectBordPiceValue} ${pieceVal}`);
+                if (pieceVal != corectBordPiceValue++ && pieceVal != -1) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
     checkIfLigelIndex(source, distantion) {
 

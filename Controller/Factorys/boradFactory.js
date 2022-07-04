@@ -86,7 +86,7 @@ export class BoardFactory extends BaseBordFactory {
         if (rowsNumber % 2 == 0) {
             let emptyIndex = values.indexOf(-1);
             let emptyRowNumber = Math.floor(emptyIndex / rowsNumber) + 1;
-            swapCount += emptyIndex; // this is the formola
+            swapCount += emptyRowNumber; // this is the formola
         }
 
         return swapCount % 2 == 0;

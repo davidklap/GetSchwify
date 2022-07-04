@@ -42,6 +42,9 @@ export class View {
     }
 
     displayGameStatus(gameStatus) {
+        if (gameStatus.status == "win") {
+            alert("good job u win the game");
+        }
         document.getElementById("status").innerHTML  = gameStatus.status;
         document.getElementById("score").innerHTML  = `Score  : ${gameStatus.score}`;
     }

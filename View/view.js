@@ -36,5 +36,15 @@ export class View {
         document.getElementById("shift-button").style.display = "block";
     }
 
+    displayGame(gameManager) {
+        this.DisplayBoard(gameManager.borad);
+        this.displayGameStatus(gameManager.gameStatus);
+    }
+
+    displayGameStatus(gameStatus) {
+        document.getElementById("status").innerHTML  = gameStatus.status;
+        document.getElementById("score").innerHTML  = `Score  : ${gameStatus.score}`;
+    }
+
 
 }

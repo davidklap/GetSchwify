@@ -18,7 +18,7 @@ export class Controller {
     }
 
     startGame(gameManager) {
-        this.View.DisplayBoard(gameManager.borad);
+        this.View.displayGame(gameManager);
         this.View.registerShiftButtonEvent(()=>this.shift(gameManager));
     }
 
@@ -26,7 +26,7 @@ export class Controller {
         let sourceIndex = new Index(this.View.getUserNumberInput("start row"),this.View.getUserNumberInput("start col"));
         let distantionIndex = new Index(this.View.getUserNumberInput("end row"),this.View.getUserNumberInput("end col"));
         gameManager.shift(sourceIndex,distantionIndex);
-        this.View.DisplayBoard(gameManager.borad);
+        this.View.displayGame(gameManager);
     }
 }
 

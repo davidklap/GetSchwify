@@ -1,4 +1,4 @@
-class Board {
+export class Board {
 
     constructor(bordPazzelPices, dimnationSize) {
         this.pazzlePieces = bordPazzelPices;

@@ -3,6 +3,7 @@ export class BaseGameManager {
         this.boradFactory = boradFactory;
         this.boradDaimntaionSize = boradDaimntaionSize;
         this.borad = boradFactory.genrateBord(boradDaimntaionSize);
+        console.log(this.borad);
         this.turnCount = 0;
     }
 

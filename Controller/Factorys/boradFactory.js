@@ -1,5 +1,6 @@
 import { BaseBordFactory } from "./Abstrucions/baseBoradFactory.js";
 import { NumberPazzelePice } from "../../Model/pazzlePices/NumberPazzlePice.js";
+import { Board } from "../../Model/borad.js";
 
 
 export class BoardFactory extends BaseBordFactory {
@@ -7,10 +8,24 @@ export class BoardFactory extends BaseBordFactory {
 
     genrateBord(size) {
         let emptyBoard = this.#createEmptyBord(size);
-
         let values = this.#createShuffleValues(size);
+        let puzzlePices = this.#convertValuesToPuzzelePices(values, size);
 
-        
+        return new Board(puzzlePices, size);
+
+    }
+
+    #convertValuesToPuzzelePices(values, size) {
+        let puzzlePices = [];
+        let valuesIndex = 0;
+        for (let row = 0; row < size; row++) {
+            puzzlePices[row] = [];
+            for (let col = 0; col < size; col++) {
+                puzzlePices[row][col] = new NumberPazzelePice(values[valuesIndex++]);
+            }
+        }
+
+        return puzzlePices;
     }
 
 

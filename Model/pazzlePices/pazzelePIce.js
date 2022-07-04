@@ -1,6 +1,6 @@
 export  class PazzelePice {
 
-    constructor({ val }) {
+    constructor(val) {
         this.val = val;
     }
 }

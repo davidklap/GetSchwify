@@ -6,7 +6,7 @@ export class Controller {
     }
 
     start() {
-        alert("start succssfly");
+        this.View.registerStartButtonEvent(()=>alert("start the game"))
     }
 }
 

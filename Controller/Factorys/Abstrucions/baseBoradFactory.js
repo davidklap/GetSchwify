@@ -1,4 +1,4 @@
-class BaseBordFactory {
+export class BaseBordFactory {
     constructor() { }
 
     genrateBord(size) { }

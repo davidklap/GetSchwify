@@ -1,12 +1,17 @@
-class BaseGameManager {
-    constructor(boradFactory,boradDaimntaionSize) {
+export class BaseGameManager {
+    constructor(boradFactory, boradDaimntaionSize) {
         this.boradFactory = boradFactory;
+        this.boradDaimntaionSize = boradDaimntaionSize;
         this.borad = boradFactory.genrateBord(boradDaimntaionSize);
-        this.turnCount =0;
+        this.turnCount = 0;
     }
 
-    shift(source , distantion)  {}
+    createBorad(boradDaimntionSize) {
+        this.bor
+    }
 
-    checkIfWin(){}
+    shift(source, distantion) { }
+
+    checkIfWin() { }
 
 }

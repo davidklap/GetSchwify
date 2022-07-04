@@ -1,5 +1,4 @@
 export class BaseBordFactory {
-    constructor() { }
-
+    constructor() {}
     genrateBord(size) { }
 }

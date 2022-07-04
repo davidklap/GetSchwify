@@ -1,4 +1,4 @@
-class PazzelePice {
+export  class PazzelePice {
 
     constructor({ val }) {
         this.val = val;

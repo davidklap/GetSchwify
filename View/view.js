@@ -1,3 +1,5 @@
+import { Board } from "../Model/borad.js";
+
 export class View {
     constructor() {
 
@@ -14,5 +16,18 @@ export class View {
 
         } while (isNaN(input));
         return input;
+    }
+
+    DisplayBoard(board) {
+        let msg = "";
+        for (let row = 0; row < board.dimnationSize; row++) {
+            msg += '|';
+            for (let col = 0; col < board.dimnationSize; col++) {
+                let val = board.pazzlePieces[row][col].val;
+                msg += val > 0 ? val.toString() : "  ";
+            }
+            msg += "|\n";
+        }
+        alert(msg);
     }
 }

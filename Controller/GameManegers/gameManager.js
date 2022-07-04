@@ -6,7 +6,9 @@ export class GameManager extends BaseGameManager {
         super(boradFactory, boradDaimntaionSize);
     }
 
-    shift(source, distantion) { }
+    shift(source, distantion) { 
+        
+    }
 
     checkIfWin() { }
 

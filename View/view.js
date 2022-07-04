@@ -24,10 +24,13 @@ export class View {
             msg += '|';
             for (let col = 0; col < board.dimnationSize; col++) {
                 let val = board.pazzlePieces[row][col].val;
-                msg += val > 0 ? val.toString() : "  ";
+                msg += val > 0 ? val.toString() : " ";
             }
             msg += "|\n";
         }
-        alert(msg);
+        document.getElementById("board").innerHTML  =  msg;
+        document.getElementById("shift-button").style.display = "block";
     }
+
+
 }

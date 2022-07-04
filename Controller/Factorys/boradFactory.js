@@ -9,9 +9,8 @@ export class BoardFactory extends BaseBordFactory {
         let emptyBoard = this.#createEmptyBord(size);
 
         let values = this.#createShuffleValues(size);
+
         
-
-
     }
 
 
@@ -27,13 +26,14 @@ export class BoardFactory extends BaseBordFactory {
     }
 
     #createShuffleValues(size) {
-        
-        let values = this.#createTheValuesArray(size);
 
-        let shuffleValues = this.#shuffle(values);
-        console.log(shuffleValues);
-        this.#chekIfBordCanBeSolve(shuffleValues);
-        return this.#shuffle(values);
+        let values = this.#createTheValuesArray(size);
+        let shuffleValues;
+        do {
+            shuffleValues = this.#shuffle(values);
+        } while (!this.#chekIfBordCanBeSolve(shuffleValues, size));
+
+        return shuffleValues;
     }
 
     #createTheValuesArray(size) {
@@ -42,7 +42,7 @@ export class BoardFactory extends BaseBordFactory {
             values[i - 1] = i;
         }
         values[size * size - 1] = -1;
-        
+
         return values;
     }
 
@@ -65,10 +65,18 @@ export class BoardFactory extends BaseBordFactory {
         return array;
     }
 
-    #chekIfBordCanBeSolve(values) {
+    #chekIfBordCanBeSolve(values, rowsNumber) {
         let swapCount = this.#calcSwapCount(values);
-        console.log(swapCount);
+
+        if (rowsNumber % 2 == 0) {
+            let emptyIndex = values.indexOf(-1);
+            let emptyRowNumber = Math.floor(emptyIndex / rowsNumber) + 1;
+            swapCount += emptyIndex; // this is the formola
+        }
+
+        return swapCount % 2 == 0;
     }
+
 
     #calcSwapCount(values) {
         let length = values.length;
@@ -86,11 +94,4 @@ export class BoardFactory extends BaseBordFactory {
         }
         return swapCount;
     }
-
-
-
-
-
-
-
 }

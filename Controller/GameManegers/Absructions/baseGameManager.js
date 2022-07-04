@@ -12,5 +12,7 @@ export class BaseGameManager {
 
     checkIfWin() { }
 
+    checkIfLigelIndex(source, distantion) {}
+
 
 }

@@ -12,10 +12,29 @@ export class GameManager extends BaseGameManager {
          [this.borad.pazzlePieces[distantion.x][distantion.y],this.borad.pazzlePieces[source.x][source.y]];
         
         this.gameStatus =  new GameStatus("keep-play",this.gameStatus.score++);
-
-        
     }
 
     checkIfWin() { }
+
+    checkIfLigelIndex(source, distantion) {
+
+        if((source.x < 0 ||  source.x >= this.boradDaimntaionSize) || (source.y < 0 ||  source.y >= this.boradDaimntaionSize)){
+            return false;
+        }
+
+        if((distantion.x < 0 ||  distantion.x >= this.boradDaimntaionSize) || (distantion.y < 0 ||  distantion.y >= this.boradDaimntaionSize)){
+            return false;
+        }
+
+        if(this.borad.pazzlePieces[source.x][source.y].val  == -1){
+            return false;
+        }
+
+        if(this.borad.pazzlePieces[distantion.x][distantion.y].val  != -1){
+            return false;
+        }
+
+        return  true;
+    }
 
 }
